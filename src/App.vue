@@ -1,6 +1,11 @@
 <template>
   <Navbar />
-  <router-view :bookList="booksData" @store="storeData" @update="updateData" @delete="deleteData"  />
+  <router-view
+    :bookList="booksData"
+    @store="storeData"
+    @update="updateData"
+    @delete="deleteData"
+  />
 </template>
 
 <script>
@@ -12,19 +17,19 @@ export default {
     Navbar,
   },
   methods: {
-    storeData(bookCreated){
+    storeData(bookCreated) {
       console.log(bookCreated);
       alert("Data berhasil ditambahkan!");
-    }, 
-    updateData(bookChanged, bookIndex){
+    },
+    updateData(bookChanged, bookIndex) {
       console.log(bookChanged, bookIndex);
       alert("Data berhasil diperbaharui!");
     },
-    deleteData (book, index) {
+    deleteData(book, index) {
       console.log(book);
       console.log(index);
       alert("Data berhasil dihapus!");
-    }
+    },
   },
   data() {
     return {
@@ -36,7 +41,13 @@ export default {
           harga: 80000,
           stok: 7,
         },
-        { _id: 2, judul: "Bumu", pengarang: "Tere Liye", harga: 85000, stok: 3 }
+        {
+          _id: 2,
+          judul: "Bumu",
+          pengarang: "Tere Liye",
+          harga: 85000,
+          stok: 3,
+        },
       ],
     };
   },
